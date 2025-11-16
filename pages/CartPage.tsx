@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';
-import WhatsAppButton from '../components/WhatsAppButton';
 import { TrashIcon } from '../components/icons/Icons';
 
 const CartPage: React.FC = () => {
@@ -64,7 +63,12 @@ const CartPage: React.FC = () => {
                   <span className="font-bold text-xl">{totalPrice.toLocaleString()} جنيه</span>
                 </div>
                 <div className="mt-8">
-                  <WhatsAppButton cartItems={cartItems} totalPrice={totalPrice} />
+                   <Link 
+                     to="/checkout"
+                     className="w-full block text-center bg-red-600 text-white font-bold py-3 px-4 rounded-md hover:bg-red-700 transition-colors duration-300"
+                   >
+                     إتمام الطلب
+                   </Link>
                 </div>
               </div>
             </div>
